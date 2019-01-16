@@ -1,0 +1,33 @@
+/*!
+ * Tikifez's SASS Boilerplate v1.0.0 (http://www.github.com)
+ *
+ * Files are structured so each category has a master include here, then
+ * additional sass files will be in each subdirectory and included in the
+ * master file for that category, e.g. for common you may have
+ * _header.scss and _footer.scss, which you'd import in the master file
+ * of common/_common.scss.
+ *
+ * Included mixins:
+ *
+ * Reset: html5doctorsreset
+ * Breakpoints: for-size()
+ * Ratio Handling: maintain-ratio()
+ * Strip Unit: strip-unit()
+ * Type Scale: type-scale()
+ *
+ * The for-size() mixin is from The 100% Correct Way to Do CSS Breakpoints
+ * https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
+ *
+ * The HTML5 Reset Stylesheet is sourced from HTML5 Doctor
+ * http://html5doctor.com/html-5-reset-stylesheet/
+ *
+ * Maintain Ratio is sourced from Brian Mcallister
+ * https://gist.github.com/brianmcallister/2932463
+ */
+
+@import "venders/venders"; // venders such as compass, bootstrap, poly, etc.
+@import "helpers/helpers"; // helpers such as mixins and functions
+@import "themes/themes"; // theme styling, including colors
+@import "common/common"; // styles used throughout
+@import "partials/partials"; // styling for specific html partials
+@import "components/components"; // components such as widgets and form fields

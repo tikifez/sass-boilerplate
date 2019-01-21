@@ -1,0 +1,53 @@
+/**
+ * A type scale tool. Based on the scales given at http://type-scale.com/
+*/
+@function type-scale($steps, $scale) {
+    $golden-ratio: 1.618;
+    $perfect-fifth: 1.5;
+    $augmented-fourth: 1.414;
+    $perfect-fourth: 1.333;
+    $major-third: 1.25;
+    $minor-third: 1.2;
+    $major-second: 1.125;
+    $minor-second: 1.067;
+
+    @if $scale == 'perfect fifth' {
+        $scale: $perfect-fifth;
+    }
+    @else if $scale == 'augmented fourth' {
+        $scale: $augmented-fourth;
+    }
+    @else if $scale == 'perfect fourth' {
+        $scale: $perfect-fourth;
+    }
+    @else if $scale == 'major third' {
+        $scale: $major-third;
+    }
+    @else if $scale == 'minor third' {
+        $scale: $minor-third;
+    }
+    @else if $scale == 'major second' {
+        $scale: $major-second;
+    }
+    @else if $scale == 'minor second' {
+        $scale: $minor-second;
+    }
+    @else {
+        $scale: $golden-ratio;
+    }
+    $value: 1;
+    @if($steps > 0) {
+        @while ($steps > 0) {
+            $value: $value * $scale;
+            $steps: $steps - 1;
+        }
+        @return $value + 0em;
+    }
+    @else if ($steps < 0) {
+        @while ($steps < 0) {
+            $value: $value / $scale;
+            $steps: $steps + 1;
+        }
+        @return $value + 0em;
+    }
+}
